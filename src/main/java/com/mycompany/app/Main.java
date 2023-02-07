@@ -2,33 +2,15 @@ package com.mycompany.app;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import model.User;
 
 public class Main {
-    class User {
-        private String name;
-        private String lastName;
-
-        public User(String name, String lastName) {
-            this.name = name;
-            this.lastName = lastName;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getLastName() {
-            return lastName;
-        }
-    }
-
-    private User getUsers() {
-        User user = new User("Eugene", "Ponomarenko");
-        return user;
+    private User getUser() {
+        return new User("Eugene", "Ponomarenko");
     }
 
     public void stringsToUser() {
-        jsonMakerAndPrinter(getUsers());
+        jsonMakerAndPrinter(getUser());
     }
 
     private void jsonMakerAndPrinter(User user) {
